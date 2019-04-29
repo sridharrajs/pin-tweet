@@ -1,0 +1,33 @@
+{
+  "name": "pin-tweet",
+  "version": "1.0.0",
+  "description": "A program that moves your favourited tweets to pinboard",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cron": "^1.7.1",
+    "dotenv": "^7.0.0",
+    "node-fetch": "^2.4.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sridharrajs/pin-tweet.git"
+  },
+  "keywords": [
+    "pinboard",
+    "tweet",
+    "twitter",
+    "favorites"
+  ],
+  "author": "sridharrajs <sridhar@aghenam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sridharrajs/pin-tweet/issues"
+  },
+  "homepage": "https://github.com/sridharrajs/pin-tweet#readme"
+}
