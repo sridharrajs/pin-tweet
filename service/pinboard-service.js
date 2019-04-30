@@ -11,7 +11,7 @@ const PINBOARD_API_TOKEN = process.env.PINBOARD_API_TOKEN;
  */
 
 function addUrl({ articleUrl, title }) {
-  return fetch(`https://api.pinboard.in/v1/posts/add?auth_token=${PINBOARD_API_TOKEN}&format=json&url=${encodeURI(articleUrl)}&description=${title}`, {
+  return fetch(encodeURI(`https://api.pinboard.in/v1/posts/add?auth_token=${PINBOARD_API_TOKEN}&format=json&url=${articleUrl}&description=${title}`), {
     method: 'POST',
     headers: {
       Accept: 'application/json',
