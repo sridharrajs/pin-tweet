@@ -3,11 +3,11 @@
 const Twitter = require('twitter');
 const { promisify } = require('util');
 const {
-    TWITTER_SCREEN_NAME,
-    TWITTER_CONSUMER_KEY,
-    TWITTER_CONSUMER_SECRET,
-    TWITTER_ACCESS_TOKEN_KEY,
-    TWITTER_ACCESS_TOKEN_KEY_SECRET
+  TWITTER_SCREEN_NAME,
+  TWITTER_CONSUMER_KEY,
+  TWITTER_CONSUMER_SECRET,
+  TWITTER_ACCESS_TOKEN_KEY,
+  TWITTER_ACCESS_TOKEN_KEY_SECRET
 } = process.env;
 
 const client = new Twitter({
