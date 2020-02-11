@@ -1,16 +1,23 @@
 'use strict';
 
-const { promisify } = require('util');
 const Twitter = require('twitter');
+const { promisify } = require('util');
+const {
+    TWITTER_SCREEN_NAME,
+    TWITTER_CONSUMER_KEY,
+    TWITTER_CONSUMER_SECRET,
+    TWITTER_ACCESS_TOKEN_KEY,
+    TWITTER_ACCESS_TOKEN_KEY_SECRET
+} = process.env;
 
 const client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_KEY_SECRET,
+  consumer_key: TWITTER_CONSUMER_KEY,
+  consumer_secret: TWITTER_CONSUMER_SECRET,
+  access_token_key: TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: TWITTER_ACCESS_TOKEN_KEY_SECRET
 });
 
-const SCREEN_NAME = process.env.TWITTER_SCREEN_NAME;
+const SCREEN_NAME = TWITTER_SCREEN_NAME;
 
 /**
  * API for Twitter service
@@ -29,7 +36,7 @@ function listLikes() {
         id: tweet.id_str,
         title: tweet.full_text,
         articleUrl: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
-      }
+      };
     });
   });
 }

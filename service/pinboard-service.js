@@ -1,7 +1,7 @@
 'use strict';
 
 const fetch = require("node-fetch");
-const PINBOARD_API_TOKEN = process.env.PINBOARD_API_TOKEN;
+const {PINBOARD_API_TOKEN} = process.env;
 
 /**
  * Ref https://pinboard.in/api#posts_add
@@ -15,7 +15,7 @@ function addUrl({ articleUrl, title }) {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
   });
 }
