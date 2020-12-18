@@ -1,7 +1,12 @@
 {
-  "react": "react",
-  "javascript": "js",
-  "youtube": "video",
-  "graphql": "graphql",
-  "node": "node"
+  "text": {
+    "react": "react",
+    "javascript": "js",
+    "graphql": "graphql",
+    "node": "node"
+  },
+  "urls": {
+    "youtube.com": "video",
+    "kencdodds.com": "react"
+  }
 }

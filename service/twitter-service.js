@@ -34,11 +34,13 @@ function listLikes() {
       return {
         id: tweet.id_str,
         title: tweet.full_text,
-        articleUrl: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+        articleUrl: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`,
+        entities: tweet.entities
       };
     });
   }).catch(err => {
     console.error('Error in twitter-service:listLikes()', err);
+    return [];
   });
 }
 
