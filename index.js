@@ -1,21 +1,12 @@
 'use strict';
 
+const CronJob = require('cron').CronJob;
 const dotenv = require('dotenv').config();
-
-const {
-  TWITTER_SCREEN_NAME,
-  TWITTER_CONSUMER_KEY,
-  TWITTER_CONSUMER_SECRET,
-  TWITTER_ACCESS_TOKEN_KEY,
-  TWITTER_ACCESS_TOKEN_KEY_SECRET
-} = process.env;
-
-const assertUtils = require('./utils/assert-utils');
-assertUtils.checkBootSettings(dotenv);
-
 const timeUtils = require('./utils/time-utils');
 
-const CronJob = require('cron').CronJob;
+const environment = require('./bin/assert-env');
+
+environment.assert(dotenv);
 
 const twitterService = require('./service/twitter-service');
 const pinboardService = require('./service/pinboard-service');
@@ -26,14 +17,20 @@ function processTweet(tweet) {
   });
 }
 
+// to work around SSL issues in some environment.
+// https://stackoverflow.com/questions/51995925/node-fetch-request-fails-on-server-unable-to-get-local-issuer-certificate
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 new CronJob('0 */1 * * * *', () => { // runs at 1st second of every minute
 
   twitterService.listLikes().then(tweets => {
     return Promise.all(tweets.map(tweet => processTweet(tweet)));
-  }).then(() => {
-    console.log(`Completed posting all tweets at ${timeUtils.getHumanReadableTime()}`);
+  }).then((tweets) => {
+    console.log(`Completed posting ${tweets.length} tweets at ${timeUtils.getHumanReadableTime()}`);
   }).catch(err => {
     console.log('Error', err);
   });
+
+  console.log('Polling Twitter => ', timeUtils.getHumanReadableTime());
 
 }, null, true);

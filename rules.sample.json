@@ -2,5 +2,6 @@
   "react": "react",
   "javascript": "js",
   "youtube": "video",
-  "graphql": "graphql"
+  "graphql": "graphql",
+  "node": "node"
 }

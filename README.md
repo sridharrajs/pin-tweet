@@ -16,7 +16,20 @@ This is a cron job that moves your favourited tweets to your [pinboard account](
    
    
     npm i
+    
+### Deployment
 
+You can run the app using the pm2 or similar process manager for nodejs
+
+     npm start
+     
+### Development
+
+To develop the app locally,
+
+    npm run dev  
+
+You can check `postman/` for the exploring the APIs that this app uses.
 
 ### License
 
