@@ -1,0 +1,115 @@
+{
+  "created_at": "Thu Dec 17 21:53:32 +0000 2020",
+  "id": 1339690216479584300,
+  "id_str": "1339690216479584257",
+  "full_text": "\"It's very common to be utterly brilliant and still think you're way smarter than you actually are.\"\n\nhttps://t.co/pcOmJJH3tm",
+  "truncated": false,
+  "display_text_range": [
+    0,
+    125
+  ],
+  "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "user_mentions": [],
+    "urls": [
+      {
+        "url": "https://t.co/pcOmJJH3tm",
+        "expanded_url": "https://www.youtube.com/watch?v=VgRdlV4LUIA&ab_channel=VaibhavBadjatya",
+        "display_url": "youtube.com/watch?v=VgRdlV…",
+        "indices": [
+          102,
+          125
+        ]
+      }
+    ]
+  },
+  "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+  "in_reply_to_status_id": null,
+  "in_reply_to_status_id_str": null,
+  "in_reply_to_user_id": null,
+  "in_reply_to_user_id_str": null,
+  "in_reply_to_screen_name": null,
+  "user": {
+    "id": 284278132,
+    "id_str": "284278132",
+    "name": "Morgan Housel",
+    "screen_name": "morganhousel",
+    "location": "",
+    "description": "@collabfund\n\nBook: https://t.co/B3yjv1Wdh3",
+    "url": "https://t.co/eWVfAW78X9",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/eWVfAW78X9",
+            "expanded_url": "http://www.collaborativefund.com/blog",
+            "display_url": "collaborativefund.com/blog",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+          {
+            "url": "https://t.co/B3yjv1Wdh3",
+            "expanded_url": "https://amzn.to/3bFkBT9",
+            "display_url": "amzn.to/3bFkBT9",
+            "indices": [
+              19,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 212447,
+    "friends_count": 577,
+    "listed_count": 4266,
+    "created_at": "Tue Apr 19 00:24:40 +0000 2011",
+    "favourites_count": 65265,
+    "utc_offset": null,
+    "time_zone": null,
+    "geo_enabled": false,
+    "verified": true,
+    "statuses_count": 16975,
+    "lang": null,
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "131516",
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+    "profile_background_tile": true,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1276544980740214785/GQUTaQBI_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1276544980740214785/GQUTaQBI_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/284278132/1575852480",
+    "profile_link_color": "009999",
+    "profile_sidebar_border_color": "EEEEEE",
+    "profile_sidebar_fill_color": "EFEFEF",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "has_extended_profile": true,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "translator_type": "none"
+  },
+  "geo": null,
+  "coordinates": null,
+  "place": null,
+  "contributors": null,
+  "is_quote_status": false,
+  "retweet_count": 28,
+  "favorite_count": 311,
+  "favorited": true,
+  "retweeted": false,
+  "possibly_sensitive": false,
+  "lang": "en"
+}

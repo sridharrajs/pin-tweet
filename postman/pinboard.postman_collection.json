@@ -1,0 +1,76 @@
+{
+  "info": {
+    "_postman_id": "c27ac3a6-9cf9-4c8e-bc59-bab14bdc89c6",
+    "name": "Pinboard - API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Posts - posts/add",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://api.pinboard.in/v1/posts/add?auth_token={{PINBOARD_API_TOKEN}}&format=json&url=https://twitter.com/bbctamil/status/1121994909093904389&description=உங்கள் பகுதியில் தண்ணீர் தட்டுப்பாடு இருக்கிறதா? | https://t.co/UcQ29ztsTA |",
+          "protocol": "https",
+          "host": [
+            "api",
+            "pinboard",
+            "in"
+          ],
+          "path": [
+            "v1",
+            "posts",
+            "add"
+          ],
+          "query": [
+            {
+              "key": "auth_token",
+              "value": "{{PINBOARD_API_TOKEN}}"
+            },
+            {
+              "key": "format",
+              "value": "json"
+            },
+            {
+              "key": "url",
+              "value": "https://twitter.com/bbctamil/status/1121994909093904389"
+            },
+            {
+              "key": "description",
+              "value": "உங்கள் பகுதியில் தண்ணீர் தட்டுப்பாடு இருக்கிறதா? | https://t.co/UcQ29ztsTA |"
+            }
+          ]
+        },
+        "description": "Add a bookmark. Arguments with shaded background are required.\n\nurl - the URL of the item\ndescription - Title of the item. This field is unfortunately named 'description' for backwards compatibility with the delicious API"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "0483761c-b893-439d-a4ab-e20ae1b7c2df",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "472abbd1-1c29-4779-9058-d9bd68d51057",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
