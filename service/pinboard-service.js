@@ -2,13 +2,15 @@
 
 const fetch = require("node-fetch");
 
+const {
+  text: textRules,
+  urls: urlRules,
+  screen_name: screenNameRules
+} = require('../rules.json');
+
 const { PINBOARD_API_TOKEN } = process.env;
-const rules = require('../rules.json');
 
-const textRules = rules.text;
-const urlRules = rules.urls;
-
-function getTags({ title, entities }) {
+function getTags({ title, entities, tweetBy }) {
   const tags = [];
 
   const text = title.toLowerCase();
@@ -30,6 +32,10 @@ function getTags({ title, entities }) {
     }
   }
 
+  if (Object.keys(screenNameRules).includes(tweetBy)) {
+    tags.push(screenNameRules[tweetBy]);
+  }
+
   return tags;
 }
 
@@ -41,13 +47,13 @@ function getTags({ title, entities }) {
  * @returns {Promise<Response>}
  */
 
-function addUrl({ articleUrl, title, entities }) {
+function addUrl({ articleUrl, title, entities, tweetBy }) {
   const queryParams = [
     'format=json',
     `auth_token=${PINBOARD_API_TOKEN}`,
     `url=${articleUrl}`,
     `description=${title}`,
-    `tags=${getTags({ title, entities })}`
+    `tags=${getTags({ title, entities, tweetBy })}`
   ];
   return fetch(encodeURI(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`), {
     method: 'POST',

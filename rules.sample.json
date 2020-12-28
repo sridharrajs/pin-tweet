@@ -8,5 +8,9 @@
   "urls": {
     "youtube.com": "video",
     "kencdodds.com": "react"
+  },
+  "screen_name": {
+    "dvassallo": "dvassallo",
+    "kentcdodds": "kentcdodds"
   }
 }

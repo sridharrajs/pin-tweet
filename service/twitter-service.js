@@ -35,7 +35,8 @@ function listLikes() {
         id: tweet.id_str,
         title: tweet.full_text,
         articleUrl: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`,
-        entities: tweet.entities
+        entities: tweet.entities,
+        tweetBy:tweet.user.screen_name,
       };
     });
   }).catch(err => {
