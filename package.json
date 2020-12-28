@@ -16,7 +16,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "deploy": "pm2 start index.js --name=pin-tweet"
   },
   "repository": {
     "type": "git",

@@ -17,19 +17,35 @@ This is a cron job that moves your favourited tweets to your [pinboard account](
    
     npm i
     
-### Deployment
-
-You can run the app using the pm2 or similar process manager for nodejs
-
-     npm start
-     
 ### Development
+
+Create a new `rules.json` based on `rules.sample.json`. 
+
+    cp rules.sample.json rules.json
+    
+Add rules based on your needs. Once that is done, you can start the app.
+
 
 To develop the app locally,
 
     npm run dev  
+    
+To run the app as application without wanting to reload any dev changes,
+
+    npm run start    
+
+### Deployment
+
+If you want to deploy using [`pm2`](https://pm2.keymetrics.io/),
+
+    npm run deploy
+
+If you want to deploy using any other node process managers, please modify the `deploy` script.
+
+## Others
 
 You can check `postman/` for the exploring the APIs that this app uses.
+
 
 ### License
 
