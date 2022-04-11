@@ -5,13 +5,18 @@
   "main": "index.js",
   "dependencies": {
     "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.10",
     "cron": "^1.7.1",
     "dotenv": "^7.0.0",
     "node-fetch": "^2.4.1",
+    "request": "^2.88.2",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
+  },
+  "engines": {
+    "node": "12"
   },
   "scripts": {
     "start": "node index.js",
@@ -29,7 +34,7 @@
     "twitter",
     "favorites"
   ],
-  "author": "sridharrajs <sridhar@aghenam.com>",
+  "author": "sridharrajs",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sridharrajs/pin-tweet/issues"

@@ -21,13 +21,14 @@ function getTags({ title, entities, tweetBy }) {
     }
   }
 
-  const urls = entities && entities.urls;
-  // url rules based on the media url that the tweet has
-  for (const url of urls) {
-    const { display_url: displayUrl } = url;
-    for (const urlRule of Object.keys(urlRules)) {
-      if (displayUrl.includes(urlRule)) {
-        tags.push(urlRules[urlRule]);
+  if (entities && entities.urls) {
+    // url rules based on the media url that the tweet has
+    for (const url of entities.urls) {
+      const { display_url: displayUrl } = url;
+      for (const urlRule of Object.keys(urlRules)) {
+        if (displayUrl.includes(urlRule)) {
+          tags.push(urlRules[urlRule]);
+        }
       }
     }
   }

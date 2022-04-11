@@ -6,7 +6,7 @@ const timeUtils = require('./utils/time-utils');
 
 const environment = require('./bin/assert-env');
 
-environment.assert(dotenv);
+environment.assertAll({ dotenv, services: ['twitter', 'pinboard'] });
 
 const twitterService = require('./service/twitter-service');
 const pinboardService = require('./service/pinboard-service');
