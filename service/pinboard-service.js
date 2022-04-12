@@ -1,5 +1,3 @@
-'use strict';
-
 const fetch = require("node-fetch");
 
 const {
@@ -49,12 +47,13 @@ function getTags({ title, entities, tweetBy }) {
  */
 
 function addUrl({ articleUrl, title, entities, tweetBy }) {
+  const tags = getTags({ title, entities, tweetBy });
   const queryParams = [
     'format=json',
     `auth_token=${PINBOARD_API_TOKEN}`,
     `url=${articleUrl}`,
     `description=${title}`,
-    `tags=${getTags({ title, entities, tweetBy })}`
+    ...(tags.length > 0 ? `tags=${tags}` : [])
   ];
   return fetch(encodeURI(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`), {
     method: 'POST',
@@ -62,7 +61,7 @@ function addUrl({ articleUrl, title, entities, tweetBy }) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     }
-  });
+  }).then(res => res.json());
 }
 
 module.exports = {
