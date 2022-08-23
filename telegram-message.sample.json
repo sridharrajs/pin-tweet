@@ -1,0 +1,43 @@
+{
+    "message_id": 88,
+    "from": {
+        "id": 111049190,
+        "is_bot": false,
+        "first_name": "firstname",
+        "last_name": "lastname",
+        "username": "YOUR_USERNAME",
+        "language_code": "en"
+    },
+    "chat": {
+        "id": 111049190,
+        "first_name": "firstname",
+        "last_name": "lastname",
+        "username": "YOUR_USERNAME",
+        "type": "private"
+    },
+    "date": 1661253604,
+    "forward_from": {
+        "id": 134651616,
+        "is_bot": false,
+        "first_name": "somebody"
+    },
+    "forward_date": 1661237719,
+    "text": "https://www.nasa.gov/mission_pages/chandra/news/new-nasa-black-hole-sonifications-with-a-remix.html\nhttps://www.gingerbill.org/article/2021/02/01/the-essence-of-programming\nhttps://vimeo.com/215418110",
+    "entities": [
+        {
+            "offset": 0,
+            "length": 99,
+            "type": "url"
+        },
+        {
+            "offset": 100,
+            "length": 72,
+            "type": "url"
+        },
+        {
+            "offset": 173,
+            "length": 27,
+            "type": "url"
+        }
+    ]
+}
