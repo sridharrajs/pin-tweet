@@ -6,10 +6,11 @@ const timeUtils = require('./utils/time-utils');
 
 const environment = require('./bin/assert-env');
 
-environment.assertAll({ dotenv, services: ['twitter', 'pinboard'] });
+environment.assertAll({ dotenv, services: ['twitter', 'pinboard', 'telegram'] });
 
 const twitterService = require('./service/twitter-service');
 const pinboardService = require('./service/pinboard-service');
+const telegramService = require('./service/telegram-bot-service');
 
 function processTweet(tweet) {
   return pinboardService.addUrl(tweet).then(() => {
@@ -34,3 +35,5 @@ new CronJob('0 */1 * * * *', () => { // runs at 1st second of every minute
   console.log('Polling Twitter => ', timeUtils.getHumanReadableTime());
 
 }, null, true);
+
+telegramService.listen();

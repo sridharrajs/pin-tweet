@@ -12,11 +12,15 @@ const ATTRIBUTES = {
     'TWITTER_SCREEN_NAME',
   ],
   pinboard: ['PINBOARD_API_TOKEN'],
+  telegram: [
+    'TELEGRAM_BOT_TOKEN',
+    'TELEGRAM_USER_NAME'
+  ]
 };
 
 function assertTokens(services) {
   const requiredAttributes = services.flatMap(service => ATTRIBUTES[service]);
-  
+
   for (let attribute of requiredAttributes) {
     if (!process.env[attribute]) {
       console.log(`Please set value for ${chalk.red(attribute)}`);
