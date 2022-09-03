@@ -57,8 +57,7 @@ function addUrl({ articleUrl, title, entities, tweetBy }) {
   ];
 
   return axios.post(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`).then(res => {
-    console.log(res.data);
-    return res
+    return res.data;
   });
 }
 
