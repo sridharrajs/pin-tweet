@@ -26,11 +26,16 @@ function listen() {
         pinboardService.addUrl({
           articleUrl: url,
           title: text
+        }).then(() => {
+          bot.sendMessage(chatId, `bookmarked ✅`, {
+            reply_to_message_id: originalMessageId
+          });
+        }).catch(() => {
+          bot.sendMessage(chatId, 'Failed ❌', {
+            reply_to_message_id: originalMessageId
+          });
         });
 
-        bot.sendMessage(chatId, `bookmarked ✅`, {
-          reply_to_message_id: originalMessageId
-        });
       }
       return;
     }
