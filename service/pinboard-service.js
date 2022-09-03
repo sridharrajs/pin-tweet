@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const axios = require('axios');
 
 const {
   text: textRules,
@@ -51,17 +51,14 @@ function addUrl({ articleUrl, title, entities, tweetBy }) {
   const queryParams = [
     'format=json',
     `auth_token=${PINBOARD_API_TOKEN}`,
-    `url=${articleUrl}`,
-    `description=${title}`,
-    ...(tags.length > 0 ? `tags=${tags}` : [])
+    `url=${encodeURI(articleUrl)}`,
+    `description=${encodeURIComponent(title)}`,
+    (tags.length > 0 ? `tags=${tags}` : [])
   ];
-  return fetch(encodeURI(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`), {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    }
-  }).then(res => res.json());
+
+  return axios.post(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`).then(res => {
+    return res.data;
+  });
 }
 
 module.exports = {
