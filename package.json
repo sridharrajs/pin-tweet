@@ -9,6 +9,8 @@
     "cheerio": "^1.0.0-rc.10",
     "cron": "^1.7.1",
     "dotenv": "^7.0.0",
+    "jquery": "^3.6.1",
+    "jsdom": "^20.0.3",
     "node-telegram-bot-api": "^0.58.0",
     "normalize-url": "6.1.0",
     "request": "^2.88.2",
