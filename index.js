@@ -2,20 +2,52 @@
 
 const CronJob = require('cron').CronJob;
 const dotenv = require('dotenv').config();
-const timeUtils = require('./utils/time-utils');
 
+const { stripHTML, getHumanReadableTime } = require('./utils');
 const environment = require('./bin/assert-env');
 
 environment.assertAll({ dotenv, services: ['twitter', 'pinboard', 'telegram'] });
 
-const twitterService = require('./service/twitter-service');
 const pinboardService = require('./service/pinboard-service');
+const twitterService = require('./service/twitter-service');
 const telegramService = require('./service/telegram-bot-service');
+const { fetchBookmark, unBookmark } = require('./service/mastodon-service');
 
 function processTweet(tweet) {
   return pinboardService.addUrl(tweet).then(() => {
     return twitterService.destroyLikes(tweet.id);
   });
+}
+
+function pinTweets() {
+  twitterService.listLikes().then(tweets => {
+    return Promise.all(tweets.map(tweet => processTweet(tweet)));
+  }).then((tweets) => {
+    console.log(`Completed posting ${tweets.length} tweets at ${getHumanReadableTime()}`);
+  }).catch(err => {
+    console.log('Error', err);
+  });
+}
+
+async function pinToots() {
+  const { data: bookmarks } = await fetchBookmark()
+  console.log(`Total bookmark fetched ${bookmarks.length}`);
+
+  for (const bookmark of bookmarks) {
+    const { id, content, url: articleUrl } = bookmark;
+    const title = stripHTML(content);
+
+    pinboardService.addUrl({
+      articleUrl, title
+    }).then(() => {
+      unBookmark(id)
+    }).catch(e => {
+      console.error(e, {
+        articleUrl, title
+      });
+    })
+
+  }
 }
 
 // to work around SSL issues in some environment.
@@ -24,15 +56,10 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 new CronJob('0 */1 * * * *', () => { // runs at 1st second of every minute
 
-  twitterService.listLikes().then(tweets => {
-    return Promise.all(tweets.map(tweet => processTweet(tweet)));
-  }).then((tweets) => {
-    console.log(`Completed posting ${tweets.length} tweets at ${timeUtils.getHumanReadableTime()}`);
-  }).catch(err => {
-    console.log('Error', err);
-  });
+  pinTweets();
+  pinToots();
 
-  console.log('Polling Twitter => ', timeUtils.getHumanReadableTime());
+  console.log('Polling at => ', getHumanReadableTime());
 
 }, null, true);
 
