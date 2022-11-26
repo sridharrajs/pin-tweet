@@ -26,8 +26,8 @@ function listen() {
         pinboardService.addUrl({
           articleUrl: url,
           title: text
-        }).then(() => {
-          bot.sendMessage(chatId, `bookmarked ✅`, {
+        }).then((bookmark) => {
+          bot.sendMessage(chatId, `bookmarked ✅ with - [${bookmark.tags.join(',')}] tags`, {
             reply_to_message_id: originalMessageId
           });
         }).catch(() => {
