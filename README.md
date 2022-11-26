@@ -4,7 +4,7 @@ This is a cron job that moves your favourited tweets to your [pinboard account](
 
 ### Uses
 
-    Nodejs v8.15.0
+    Nodejs v16.13.1
 
 ### Installation
 
