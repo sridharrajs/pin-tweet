@@ -1,6 +1,6 @@
 # Changelog
 
-# 2.0.0
+## 2.0.0
 * refactor: tagging [#14](https://github.com/sridharrajs/pin-tweet/pull/14)
 
 ## 1.2.0
