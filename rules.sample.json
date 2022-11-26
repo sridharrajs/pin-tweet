@@ -3,13 +3,9 @@
     "react": "react",
     "javascript": "js",
     "graphql": "graphql",
-    "node": "node"
-  },
-  "urls": {
+    "node": "node",
     "youtube.com": "video",
-    "kencdodds.com": "react"
-  },
-  "screen_name": {
+    "kencdodds.com": "react",
     "dvassallo": "dvassallo",
     "kentcdodds": "kentcdodds"
   }
