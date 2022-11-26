@@ -24,7 +24,7 @@ function addUrl({ articleUrl, title, entities }) {
   ];
 
   return axios.post(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`).then(res => {
-    return res.data;
+    return { ...res.data, tags };
   });
 }
 

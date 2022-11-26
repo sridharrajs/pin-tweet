@@ -23,8 +23,6 @@ function getTags({ articleUrl, title, entities }) {
     }
   }
 
-  console.log(tags);
-
   return tags;
 }
 
