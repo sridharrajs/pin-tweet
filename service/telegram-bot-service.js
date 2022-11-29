@@ -27,7 +27,10 @@ function listen() {
           articleUrl: url,
           title: text
         }).then((bookmark) => {
-          bot.sendMessage(chatId, `bookmarked ✅ with - [${bookmark.tags.join(',')}] tags`, {
+          const msg = bookmark.tags.length > 0
+            ? `bookmarked ✅ with - [${bookmark.tags.join(',')}] tags`
+            : `bookmarked ✅`;
+          bot.sendMessage(chatId, msg, {
             reply_to_message_id: originalMessageId
           });
         }).catch(() => {
