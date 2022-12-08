@@ -1,0 +1,83 @@
+{
+  "id": "109324333257457490",
+  "created_at": "2022-11-11T08:55:40.573Z",
+  "in_reply_to_id": null,
+  "in_reply_to_account_id": null,
+  "sensitive": false,
+  "spoiler_text": "",
+  "visibility": "public",
+  "language": "en",
+  "uri": "https://mastodon.social/users/Mastodon/statuses/109324333257457490",
+  "url": "https://mastodon.social/@Mastodon/109324333257457490",
+  "replies_count": 47,
+  "reblogs_count": 768,
+  "favourites_count": 1582,
+  "edited_at": null,
+  "favourited": false,
+  "reblogged": false,
+  "muted": false,
+  "bookmarked": true,
+  "content": "<p>✨ A new release candidate for Mastodon 4.0 is now available for testing! We are planning to release the stable on Monday, along with some important security fixes. Stay tuned!</p><p><a href=\"https://github.com/mastodon/mastodon/releases/tag/v4.0.0rc3\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">github.com/mastodon/mastodon/r</span><span class=\"invisible\">eleases/tag/v4.0.0rc3</span></a></p>",
+  "filtered": [],
+  "reblog": null,
+  "application": {
+    "name": "Web",
+    "website": null
+  },
+  "account": {
+    "id": "13179",
+    "username": "Mastodon",
+    "acct": "Mastodon",
+    "display_name": "Mastodon",
+    "locked": false,
+    "bot": false,
+    "discoverable": true,
+    "group": false,
+    "created_at": "2016-11-23T00:00:00.000Z",
+    "note": "<p>Official account of the Mastodon project. News, releases, announcements. All in micro-blog form! Toot toot!</p>",
+    "url": "https://mastodon.social/@Mastodon",
+    "avatar": "https://files.mastodon.social/accounts/avatars/000/013/179/original/b4ceb19c9c54ec7e.png",
+    "avatar_static": "https://files.mastodon.social/accounts/avatars/000/013/179/original/b4ceb19c9c54ec7e.png",
+    "header": "https://files.mastodon.social/accounts/headers/000/013/179/original/878f382e7dd9fb84.png",
+    "header_static": "https://files.mastodon.social/accounts/headers/000/013/179/original/878f382e7dd9fb84.png",
+    "followers_count": 704413,
+    "following_count": 10,
+    "statuses_count": 222,
+    "last_status_at": "2022-11-14",
+    "noindex": false,
+    "emojis": [],
+    "fields": [
+      {
+        "name": "Homepage",
+        "value": "<a href=\"https://joinmastodon.org\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">joinmastodon.org</span><span class=\"invisible\"></span></a>",
+        "verified_at": "2018-10-31T04:11:00.076+00:00"
+      },
+      {
+        "name": "Patreon",
+        "value": "<a href=\"https://patreon.com/mastodon\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">patreon.com/mastodon</span><span class=\"invisible\"></span></a>",
+        "verified_at": null
+      }
+    ]
+  },
+  "media_attachments": [],
+  "mentions": [],
+  "tags": [],
+  "emojis": [],
+  "card": {
+    "url": "https://github.com/mastodon/mastodon/releases/tag/v4.0.0rc3",
+    "title": "Release v4.0.0rc3 · mastodon/mastodon",
+    "description": "Note: This is a release candidate. It is intended to be stable, but not guaranteed.\n\nUpgrade overview\nThis release contains upgrade notes that deviate from the norm:\nℹ️ Requires two-step database m...",
+    "type": "link",
+    "author_name": "",
+    "author_url": "",
+    "provider_name": "GitHub",
+    "provider_url": "",
+    "html": "",
+    "width": 400,
+    "height": 200,
+    "image": "https://files.mastodon.social/cache/preview_cards/images/047/355/519/original/918ce2656c1194ff.png",
+    "embed_url": "",
+    "blurhash": "UHS6Suw@D+%1pK--M}oMRNM}ofWT~qNHxsRl"
+  },
+  "poll": null
+}

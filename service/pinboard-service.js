@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 const { getTags } = require('./tagging-service');
+const { removeTrackers }= require('../utils');
 
 const { PINBOARD_API_TOKEN } = process.env;
 
@@ -14,11 +15,12 @@ const { PINBOARD_API_TOKEN } = process.env;
  */
 
 function addUrl({ articleUrl, title, entities }) {
+  const url = encodeURI(removeTrackers(articleUrl));
   const tags = getTags({ articleUrl, title, entities });
   const queryParams = [
     'format=json',
     `auth_token=${PINBOARD_API_TOKEN}`,
-    `url=${encodeURI(articleUrl)}`,
+    `url=${url}`,
     `description=${encodeURIComponent(title)}`,
     (tags.length > 0 ? `tags=${tags}` : [])
   ];
