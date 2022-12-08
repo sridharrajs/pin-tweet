@@ -44,7 +44,7 @@ If you want to deploy using any other node process managers, please modify the `
 
 ## Others
 
-You can check `postman/` for the exploring the APIs that this app uses.
+You can check `docs/` for the exploring the pinboard API (for bookmarking + unbookmarking) and sample json response from services that this app uses.
 
 
 ### License
