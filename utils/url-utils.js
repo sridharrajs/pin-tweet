@@ -1,14 +1,11 @@
 const normalizeUrl = require('normalize-url');
 
+const { trackers = [] } = require('../rules.json');
+
 function removeTrackers(url) {
   return normalizeUrl(url, {
     stripHash: true,
-    removeQueryParameters: [
-      'ref',
-      'utm_campaign',
-      'utm_medium',
-      'utm_source'
-    ]
+    removeQueryParameters: trackers
   });
 }
 
