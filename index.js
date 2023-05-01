@@ -54,8 +54,8 @@ async function pinToots() {
 // https://stackoverflow.com/questions/51995925/node-fetch-request-fails-on-server-unable-to-get-local-issuer-certificate
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
-// runs once every 30 minutes
-new CronJob('*/30 * * * * *', () => {
+// runs every 30 minutes
+new CronJob('0 */30 * * * *', () => {
 
   pinTweets();
   pinToots();
