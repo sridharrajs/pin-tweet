@@ -55,7 +55,7 @@ async function pinToots() {
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 // runs every 30 minutes
-new CronJob('0 0 */30 * * *', () => {
+new CronJob('0 */30 * * * *', () => {
 
   pinTweets();
   pinToots();
