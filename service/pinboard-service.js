@@ -1,10 +1,22 @@
 const axios = require('axios');
 
 const { getTags } = require('./tagging-service');
-const { removeTrackers }= require('../utils');
+const { removeTrackers } = require('../utils');
 
 const { PINBOARD_API_TOKEN } = process.env;
 
+const getAddBookmarkEndpoint = ({ articleUrl, title, entities }) => {
+  const addBookmarkEndpoint = new URL('https://api.pinboard.in/v1/posts/add');
+  addBookmarkEndpoint.searchParams.set('format', 'json')
+  addBookmarkEndpoint.searchParams.set('auth_token', PINBOARD_API_TOKEN)
+  addBookmarkEndpoint.searchParams.set('url', removeTrackers(articleUrl))
+  addBookmarkEndpoint.searchParams.set('description', title)
+
+  const tags = getTags({ articleUrl, title, entities });
+  tags.length > 0 && addBookmarkEndpoint.searchParams.set('tags', tags);
+
+  return addBookmarkEndpoint.toString();
+}
 
 /**
  * Ref https://pinboard.in/api#posts_add
@@ -15,21 +27,14 @@ const { PINBOARD_API_TOKEN } = process.env;
  */
 
 function addUrl({ articleUrl, title, entities }) {
-  const url = encodeURI(removeTrackers(articleUrl));
-  const tags = getTags({ articleUrl, title, entities });
-  const queryParams = [
-    'format=json',
-    `auth_token=${PINBOARD_API_TOKEN}`,
-    `url=${url}`,
-    `description=${encodeURIComponent(title)}`,
-    (tags.length > 0 ? `tags=${tags}` : [])
-  ];
+  const addBookmarkEndpoint = getAddBookmarkEndpoint({ articleUrl, title, entities });
 
-  return axios.post(`https://api.pinboard.in/v1/posts/add?${queryParams.join('&')}`).then(res => {
+  return axios.post(addBookmarkEndpoint.toString()).then(res => {
     return { ...res.data, tags };
   });
 }
 
 module.exports = {
-  addUrl
+  addUrl,
+  getAddBookmarkEndpoint
 };
