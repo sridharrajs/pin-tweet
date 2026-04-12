@@ -27,13 +27,15 @@ function listen() {
           articleUrl: url,
           title: text
         }).then((bookmark) => {
-          const msg = bookmark.tags.length > 0
-            ? `bookmarked ✅ with - [${bookmark.tags.join(',')}] tags`
-            : `bookmarked ✅`;
+          const msg =
+            bookmark?.tags?.length > 0
+              ? `bookmarked ✅ with - [${bookmark?.tags?.join(",")}] tags`
+              : `bookmarked ✅`;
           bot.sendMessage(chatId, msg, {
             reply_to_message_id: originalMessageId
           });
-        }).catch(() => {
+        }).catch((e) => {
+          console.log(e)
           bot.sendMessage(chatId, 'Failed ❌', {
             reply_to_message_id: originalMessageId
           });

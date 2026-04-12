@@ -30,7 +30,7 @@ function addUrl({ articleUrl, title, entities }) {
   const addBookmarkEndpoint = getAddBookmarkEndpoint({ articleUrl, title, entities });
 
   return axios.post(addBookmarkEndpoint.toString()).then(res => {
-    return { ...res.data, tags };
+    return { ...res.data };
   });
 }
 
